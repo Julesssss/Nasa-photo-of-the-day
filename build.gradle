@@ -1,14 +1,39 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.71'
+    ext {
+        def versionMajor = 0
+        def versionMinor = 0
+        def versionPatch = 0
+
+        versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
+
+        configuration = [
+                package          : "julesssss.github.apod",
+                compileSdkVersion: 28,
+                targetSdkVersion : 28,
+                minSdkVersion    : 21,
+                buildToolsVersion: "23.0.1",
+                kotlinVersion    : "1.2.71",
+                appCompat        : "1.1.0-alpha01",
+        ]
+        libraries = [
+                constraintLayout: "2.0.0-alpha3",
+        ]
+        test = [
+                junit   : "4.12",
+                runner  : "1.1.1",
+                espresso: "3.1.1"
+        ]
+    }
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$configuration.kotlinVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
