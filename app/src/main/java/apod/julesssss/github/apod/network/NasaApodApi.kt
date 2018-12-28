@@ -10,10 +10,10 @@ import retrofit2.http.Query
  */
 interface NasaApodApi {
 
-    @GET("planetary/apod?api_key=DEMO_KEY")
+    @GET("planetary/apod")
     fun getPhotoOfTheDay(): Single<ApiPhoto>
 
-    @GET("planetary/apod?api_key=DEMO_KEY")
+    @GET("planetary/apod")
     fun getPhotoForDate(
         @Query("date") date: String
     ): Single<ApiPhoto>

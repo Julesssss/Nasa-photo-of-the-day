@@ -31,5 +31,6 @@ object ServiceProvider {
             .addInterceptor(HttpLoggingInterceptor().apply {
                 if (BuildConfig.DEBUG) level = HttpLoggingInterceptor.Level.BODY
             })
+            .addInterceptor(NasaAuthInterceptor())
             .build()
 }
