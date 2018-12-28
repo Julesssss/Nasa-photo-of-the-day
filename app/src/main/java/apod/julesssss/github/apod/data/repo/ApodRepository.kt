@@ -28,7 +28,7 @@ class ApodRepository(private val nasaApodApi: NasaApodApi) {
      * Retrieve the last 7 astronomy photos of the day
      */
     fun getLast7Photos(): Single<List<ApiPhoto>> {
-        val lastWeekDates = buildWeekDatesArray()
+        val lastWeekDates = buildWeekArrayFromDate(Date())
 
         return Single.zip(
             getPhotoOfTheDay(),
@@ -48,9 +48,8 @@ class ApodRepository(private val nasaApodApi: NasaApodApi) {
     /*
      * Create an array of formatted dates which will be used to retrieve specific APODs
      */
-    private fun buildWeekDatesArray(): List<String> {
+    internal fun buildWeekArrayFromDate(date: Date): List<String> {
         val dateArray = mutableListOf<String>()
-        val date = Date()
 
         for (i in 1..7) {
             dateArray.add(SimpleDateFormat(DateConstants.dayFormat, Locale.getDefault()).format(date))
