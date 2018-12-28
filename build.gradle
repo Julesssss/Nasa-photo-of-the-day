@@ -20,6 +20,13 @@ buildscript {
         ]
         libraries = [
                 constraintLayout: "2.0.0-alpha3",
+                rxAndroid       : "2.1.0",
+                rxKotlin        : "2.3.0",
+                gson            : "2.8.1",
+                okHttp          : "3.10.0",
+                retrofit        : "2.4.0",
+                retrofitRx      : "1.0.0",
+                lifecycle      : "2.0.0"
         ]
         test = [
                 junit   : "4.12",
