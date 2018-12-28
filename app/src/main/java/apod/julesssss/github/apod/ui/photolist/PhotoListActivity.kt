@@ -2,10 +2,10 @@ package apod.julesssss.github.apod.ui.photolist
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import apod.julesssss.github.apod.R
 import apod.julesssss.github.apod.extension.findViewModel
 import apod.julesssss.github.apod.extension.toast
-import io.reactivex.rxkotlin.subscribeBy
 
 class PhotoListActivity : AppCompatActivity() {
 
@@ -19,10 +19,11 @@ class PhotoListActivity : AppCompatActivity() {
         viewModel = findViewModel()
         lifecycle.addObserver(viewModel)
 
-        // todo: this is temporary, networking should be handled by VM, which simply passes view state to Activity.
-        viewModel.getPhotoList().subscribeBy(
-            onSuccess = { toast("list: $it") },
-            onError = { it.printStackTrace() }
-        )
+        // subscribe to ViewModel state
+        viewModel.state.observe(this, Observer { updateState(it) })
+    }
+
+    private fun updateState(state: PhotoListViewModel.ViewState) {
+        toast(state.data.toString())
     }
 }
