@@ -49,7 +49,5 @@ class PhotoListViewModel(app: Application) : DisposingViewModel(app), LifecycleO
             errorMessage = throwable.localizedMessage
         )
     }
-        )
-    }
 
 }
