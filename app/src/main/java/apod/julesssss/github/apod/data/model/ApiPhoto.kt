@@ -6,7 +6,7 @@ data class ApiPhoto(
     val date: String = "",
     val title: String = "",
     val explanation: String = "",
-    val copyright: String = "",
+    val copyright: String? = "",
     @SerializedName("hdurl") val hdImageUrl: String = "",
     @SerializedName("url") val imageUrl: String = "",
     @SerializedName("media_type") val mediaType: String = "",
