@@ -22,14 +22,14 @@ class PhotoListViewModel(app: Application) : DisposingViewModel(app), LifecycleO
         val errorMessage: String = ""
     )
 
-    private val chartRepo: ApodRepository = (app as ApodApplication).apodRepository
+    private val apodRepo: ApodRepository = (app as ApodApplication).apodRepository
 
     val state = MutableLiveData<ViewState>().also { it.value = ViewState() }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun getPhotoList() {
         add(
-            chartRepo.getLast7Photos().subscribeBy(
+            apodRepo.getLast7Photos().subscribeBy(
                 onSuccess = { onPhotosRetrieved(it) },
                 onError = ::onError
             )
