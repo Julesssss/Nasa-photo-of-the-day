@@ -12,6 +12,12 @@ import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 import java.util.*
 
+const val DATE_28TH_DEC_2018_IN_MILLIS = 1546012330053
+
+val WEEK_DATES_LEADING_TO_28TH_DEC_2018 = listOf(
+    "2018-12-28", "2018-12-27", "2018-12-26", "2018-12-25", "2018-12-24", "2018-12-23", "2018-12-22"
+)
+
 @RunWith(MockitoJUnitRunner::class)
 class ApodRepositoryTest {
 
@@ -27,16 +33,13 @@ class ApodRepositoryTest {
 
     @Test
     fun `test that last 7 day formats are built correctly from date`() {
-        val date = Date().also { it.time = 1546012330053 }
-
+        val date = Date().also { it.time = DATE_28TH_DEC_2018_IN_MILLIS }
         val dates = apodRepository.buildWeekArrayFromDate(date)
-        assertEquals(dates[0], "2018-12-28")
-        assertEquals(dates[1], "2018-12-27")
-        assertEquals(dates[2], "2018-12-26")
-        assertEquals(dates[3], "2018-12-25")
-        assertEquals(dates[4], "2018-12-24")
-        assertEquals(dates[5], "2018-12-23")
-        assertEquals(dates[6], "2018-12-22")
 
+        // verify count
+        assertEquals(dates.size, 7)
+
+        // verify dates
+        assertEquals(dates, WEEK_DATES_LEADING_TO_28TH_DEC_2018)
     }
 }
