@@ -29,7 +29,7 @@ class PhotoListViewModel(app: Application) : DisposingViewModel(app), LifecycleO
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun getPhotoList() {
         add(
-            chartRepo.getMultiple().subscribeBy(
+            chartRepo.getLast7Photos().subscribeBy(
                 onSuccess = { onPhotosRetrieved(it) },
                 onError = ::onError
             )
