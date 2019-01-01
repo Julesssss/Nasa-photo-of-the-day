@@ -31,13 +31,13 @@ class ApodRepository(private val nasaApodApi: NasaApodApi) {
         val lastWeekDates = buildWeekArrayFromDate(Date())
 
         return Single.zip(
-            getPhotoOfTheDay(),
             getPhotoForDate(lastWeekDates[0]),
             getPhotoForDate(lastWeekDates[1]),
             getPhotoForDate(lastWeekDates[2]),
             getPhotoForDate(lastWeekDates[3]),
             getPhotoForDate(lastWeekDates[4]),
             getPhotoForDate(lastWeekDates[5]),
+            getPhotoForDate(lastWeekDates[6]),
 
             Function7<ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, List<ApiPhoto>> { p1, p2, p3, p4, p5, p6, p7 ->
                 listOf(p1, p2, p3, p4, p5, p6, p7).filter { it.imageUrl.isNotEmpty() }
