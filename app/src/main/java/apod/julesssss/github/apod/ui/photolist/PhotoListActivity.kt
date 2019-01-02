@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import apod.julesssss.github.apod.R
 import apod.julesssss.github.apod.extension.createLinearLayoutManager
-import apod.julesssss.github.apod.extension.findViewModel
 import kotlinx.android.synthetic.main.activity_photo_list.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PhotoListActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: PhotoListViewModel
+    private val viewModel: PhotoListViewModel by viewModel()
 
     private var adapter: PhotoListAdapter = PhotoListAdapter()
 
@@ -22,8 +22,6 @@ class PhotoListActivity : AppCompatActivity() {
         photoListRecyclerView.createLinearLayoutManager()
         photoListRecyclerView.adapter = adapter
 
-        // Find reference to ViewModel and subscribe to lifecycle events
-        viewModel = findViewModel()
         lifecycle.addObserver(viewModel)
 
         // subscribe to ViewModel state

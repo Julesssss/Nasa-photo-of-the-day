@@ -1,16 +1,15 @@
 package apod.julesssss.github.apod
 
 import android.app.Application
-import apod.julesssss.github.apod.data.repo.ApodRepository
-import apod.julesssss.github.apod.network.NasaApodApi
-import apod.julesssss.github.apod.network.ServiceProvider
+import apod.julesssss.github.apod.di.appModule
+import org.koin.android.ext.android.startKoin
 
 class ApodApplication : Application() {
 
-    // todo: application class is temporarily used to handle singleton access to API & repository. Replace with dependency injection solution
+    override fun onCreate() {
+        super.onCreate()
 
-    private val apodApi: NasaApodApi by lazy { ServiceProvider.buildNasaApodApi() }
-
-    internal val apodRepository: ApodRepository by lazy { ApodRepository(apodApi) }
+        startKoin(this, listOf(appModule))
+    }
 
 }

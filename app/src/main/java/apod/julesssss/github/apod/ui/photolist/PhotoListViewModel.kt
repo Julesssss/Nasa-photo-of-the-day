@@ -2,16 +2,18 @@ package apod.julesssss.github.apod.ui.photolist
 
 import android.app.Application
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
-import apod.julesssss.github.apod.ApodApplication
 import apod.julesssss.github.apod.data.model.ApiPhoto
 import apod.julesssss.github.apod.data.repo.ApodRepository
 import apod.julesssss.github.apod.ui.base.DisposingViewModel
 import io.reactivex.rxkotlin.subscribeBy
+import org.koin.standalone.KoinComponent
+import org.koin.standalone.inject
 
-class PhotoListViewModel(app: Application) : DisposingViewModel(app), LifecycleObserver {
+class PhotoListViewModel(app: Application) : DisposingViewModel(app), KoinComponent {
+
+    private val apodRepo: ApodRepository by inject()
 
     /*
      * Represents the state of ViewModel, all necessary info should be contained within this data class.
@@ -21,8 +23,6 @@ class PhotoListViewModel(app: Application) : DisposingViewModel(app), LifecycleO
         val isLoading: Boolean = true,
         val errorMessage: String = ""
     )
-
-    private val apodRepo: ApodRepository = (app as ApodApplication).apodRepository
 
     val state = MutableLiveData<ViewState>().also { it.value = ViewState() }
 

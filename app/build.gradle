@@ -38,6 +38,10 @@ dependencies {
     implementation "com.android.support:cardview-v7:$libraries.cardview"
     implementation "com.squareup.picasso:picasso:$libraries.picasso"
 
+    // Dependency Injection
+    implementation "org.koin:koin-androidx-scope:$libraries.koin"
+    implementation "org.koin:koin-androidx-viewmodel:$libraries.koin"
+
     // RxJava
     implementation "io.reactivex.rxjava2:rxandroid:$libraries.rxAndroid"
     implementation "io.reactivex.rxjava2:rxkotlin:$libraries.rxKotlin"
