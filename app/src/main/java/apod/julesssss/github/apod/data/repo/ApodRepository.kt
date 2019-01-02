@@ -1,5 +1,6 @@
 package apod.julesssss.github.apod.data.repo
 
+import apod.julesssss.github.apod.BuildConfig
 import apod.julesssss.github.apod.data.model.ApiPhoto
 import apod.julesssss.github.apod.network.NasaApodApi
 import apod.julesssss.github.apod.network.ScheduleProvider
@@ -15,13 +16,13 @@ class ApodRepository(private val nasaApodApi: NasaApodApi) {
     /*
      * Retrieve today's astronomy photo of the day
      */
-    private fun getPhotoOfTheDay(): Single<ApiPhoto> = nasaApodApi.getPhotoOfTheDay()
+    private fun getPhotoOfTheDay(): Single<ApiPhoto> = nasaApodApi.getPhotoOfTheDay(BuildConfig.NASA_API_KEY)
         .compose(ScheduleProvider.getSchedulersForSingle())
 
     /*
      * Retrieve astronomy photo for a specific date
      */
-    private fun getPhotoForDate(date: String): Single<ApiPhoto> = nasaApodApi.getPhotoForDate(date)
+    private fun getPhotoForDate(date: String): Single<ApiPhoto> = nasaApodApi.getPhotoForDate(date, BuildConfig.NASA_API_KEY)
         .compose(ScheduleProvider.getSchedulersForSingle())
 
     /*

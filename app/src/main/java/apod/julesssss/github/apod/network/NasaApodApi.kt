@@ -11,11 +11,14 @@ import retrofit2.http.Query
 interface NasaApodApi {
 
     @GET("planetary/apod")
-    fun getPhotoOfTheDay(): Single<ApiPhoto>
+    fun getPhotoOfTheDay(
+        @Query("api_key") apiKey: String
+    ): Single<ApiPhoto>
 
     @GET("planetary/apod")
     fun getPhotoForDate(
-        @Query("date") date: String
+        @Query("date") date: String,
+        @Query("api_key") apiKey: String
     ): Single<ApiPhoto>
 
 }
