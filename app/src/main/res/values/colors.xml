@@ -5,4 +5,10 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorError">#B00020</color>
+
+    <!-- Palette -->
+    <color name="midnightBlue">#0b3d91</color>
+    <color name="oriolesOrange">#fc3d21</color>
+
+
 </resources>
