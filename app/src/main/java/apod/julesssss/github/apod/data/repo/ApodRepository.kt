@@ -40,8 +40,8 @@ class ApodRepository(private val nasaApodApi: NasaApodApi) {
             getPhotoForDate(lastWeekDates[5]),
             getPhotoForDate(lastWeekDates[6]),
 
-            Function7<ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, List<ApiPhoto>> { p1, p2, p3, p4, p5, p6, p7 ->
-                listOf(p1, p2, p3, p4, p5, p6, p7).filter { it.imageUrl.isNotEmpty() }
+            Function7<ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, ApiPhoto, List<ApiPhoto>> { p0, p1, p2, p3, p4, p5, p6 ->
+                listOf(p0, p1, p2, p3, p4, p5, p6).filter { it.imageUrl.isNotEmpty() }
             }
         )
     }
