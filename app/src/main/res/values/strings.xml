@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">APOD</string>
+
+    <!-- Content Descriptions -->
+    <string name="image_desc_listitem_apod_image_main">Astronomy photo of the day.</string>
+    <string name="image_desc_listitem_apod_image_type">Icon representing apod type.</string>
 </resources>

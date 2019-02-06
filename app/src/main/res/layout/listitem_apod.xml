@@ -10,13 +10,14 @@
     android:paddingBottom="@dimen/margin_small">
 
     <ImageView
-        android:id="@+id/itemPhotoCardImage"
+        android:id="@+id/listitemApodImageMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/image_desc_listitem_apod_image_type"
         android:scaleType="fitXY"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@+id/itemPhotoCardTextTitle"
+        app:layout_constraintBottom_toTopOf="@+id/listitemApodTextTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,15 +25,17 @@
         tools:layout_height="180dp" />
 
     <ImageView
+        android:id="@+id/listitemApodImageTypeIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_margin="@dimen/margin_small"
+        android:contentDescription="@string/image_desc_listitem_apod_image_main"
         android:src="@drawable/ic_image"
-        app:layout_constraintBottom_toBottomOf="@id/itemPhotoCardImage"
+        app:layout_constraintBottom_toBottomOf="@id/listitemApodImageMain"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/itemPhotoCardTextTitle"
+        android:id="@+id/listitemApodTextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/midnightBlue"
@@ -41,7 +44,7 @@
         android:padding="@dimen/margin_small"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/itemPhotoCardImage"
+        app:layout_constraintTop_toBottomOf="@id/listitemApodImageMain"
         tools:text="Caption which hopefully spans multiple lines to test long titles" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
