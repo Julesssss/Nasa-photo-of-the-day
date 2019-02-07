@@ -1,10 +1,13 @@
 package apod.julesssss.github.apod.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 /*
  * An APOD which can be of type image or video.
  */
+@Parcelize
 data class ApiPhoto(
     val date: String = "",
     val title: String = "",
@@ -14,7 +17,7 @@ data class ApiPhoto(
     @SerializedName("url") val imageUrl: String = "",
     @SerializedName("media_type") val mediaType: String = "",
     @SerializedName("service_version") val serviceVersion: String = ""
-)
+) : Parcelable
 
 enum class ApodType {
     IMAGE,

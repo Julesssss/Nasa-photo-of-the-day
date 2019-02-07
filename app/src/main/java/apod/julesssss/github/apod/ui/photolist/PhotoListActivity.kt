@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import apod.julesssss.github.apod.R
 import apod.julesssss.github.apod.extension.createLinearLayoutManager
+import apod.julesssss.github.apod.ui.navigation.ActivityLauncher
 import kotlinx.android.synthetic.main.activity_photo_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -13,7 +14,7 @@ class PhotoListActivity : AppCompatActivity() {
 
     private val viewModel: PhotoListViewModel by viewModel()
 
-    private var adapter: PhotoListAdapter = PhotoListAdapter()
+    private var adapter: PhotoListAdapter = PhotoListAdapter { ActivityLauncher.launchDetailActivity(this, it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

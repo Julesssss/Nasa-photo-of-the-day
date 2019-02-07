@@ -9,7 +9,7 @@ import apod.julesssss.github.apod.data.model.ApiPhoto
 /*
  * Adapter for APOD photos list page
  */
-class PhotoListAdapter : RecyclerView.Adapter<ApodViewHolder>() {
+class PhotoListAdapter(val clickCallback: (ApiPhoto) -> Unit) : RecyclerView.Adapter<ApodViewHolder>() {
 
     var apodPhotos = listOf<ApiPhoto>()
         set(value) {
@@ -26,5 +26,8 @@ class PhotoListAdapter : RecyclerView.Adapter<ApodViewHolder>() {
 
     override fun onBindViewHolder(holder: ApodViewHolder, position: Int) {
         holder.bind(apodPhotos[position])
+        holder.containerView.setOnClickListener {
+            clickCallback(apodPhotos[position])
+        }
     }
 }
