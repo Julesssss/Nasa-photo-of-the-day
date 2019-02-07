@@ -10,7 +10,7 @@ val appModule = module {
 
     single { ApodRepository(get()) }
 
-    factory { ServiceProvider.buildNasaApodApi() }
+    single { ServiceProvider.buildNasaApodApi() }
 
     viewModel<PhotoListViewModel>()
 }
