@@ -17,6 +17,7 @@ class ApodViewHolder(override val containerView: View) : RecyclerView.ViewHolder
 
     fun bind(photo: ApiPhoto) {
         listitemApodTextTitle.text = photo.title
+        listitemApodTextDate.text = photo.date
 
         if (photo.getType() == ApodType.IMAGE) listitemApodImageMain.loadWithPicasso(
             photo.imageUrl,
