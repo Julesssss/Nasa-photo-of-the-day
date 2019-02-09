@@ -25,6 +25,19 @@ View state is represented by an immutable data class emitted as a LiveData subsc
 
 [Espresso](https://developer.android.com/training/testing/espresso/)
 
+### Building the project
+
+To build the project, you will need your own auth token for the NASA APOD API ([sign up here](https://api.nasa.gov/index.html#apply-for-an-api-key)). If you don't follow the steps below, the project will not compile.
+
+Once you have a key, you will need to make it available as a gradle.properties file. Navigate to '$HOME/.gradle/' and if a gradle.properties file does not exist, create it.
+
+Add the following to the gradle.properties file, replacing XYZ for your NASA API key.
+```
+nasaApiKey=XYZ
+```
+
+After a project refresh, you should see the gradle.properties file in the Android Studio project browser view under 'Gradle Scripts'. Switch to the Android view if you don't see 'Gradle Scripts'
+
 ### Screenshots
 
 <img src="media/screenshot1.png" alt="screenshot" width="300"/>
