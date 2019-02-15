@@ -5,4 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.photodetail.PhotoDetailActivity">
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/photoDetailViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/midnightBlue" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

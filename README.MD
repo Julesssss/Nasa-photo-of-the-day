@@ -28,3 +28,10 @@ View state is represented by an immutable data class emitted as a LiveData subsc
 ### Screenshots
 
 <img src="media/screenshot1.png" alt="screenshot" width="300"/>
+
+
+### TODO
+
+- Use MVI architecture
+- Refactor ApiPhoto/APOD
+- Sanitise data object

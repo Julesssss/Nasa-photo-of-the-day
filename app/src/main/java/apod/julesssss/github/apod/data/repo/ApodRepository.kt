@@ -22,7 +22,7 @@ class ApodRepository(private val nasaApodApi: NasaApodApi) {
     /*
      * Retrieve astronomy photo for a specific date
      */
-    private fun getPhotoForDate(date: String): Single<ApiPhoto> = nasaApodApi.getPhotoForDate(date, BuildConfig.NASA_API_KEY)
+    fun getPhotoForDate(date: String): Single<ApiPhoto> = nasaApodApi.getPhotoForDate(date, BuildConfig.NASA_API_KEY)
         .compose(ScheduleProvider.getSchedulersForSingle())
 
     /*
