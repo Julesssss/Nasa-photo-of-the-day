@@ -41,3 +41,10 @@ After a project refresh, you should see the gradle.properties file in the Androi
 ### Screenshots
 
 <img src="media/screenshot1.png" alt="screenshot" width="300"/>
+
+
+### TODO
+
+- Use MVI architecture
+- Refactor ApiPhoto/APOD
+- Sanitise data object
