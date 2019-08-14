@@ -4,9 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import apod.julesssss.github.apod.R
-import apod.julesssss.github.apod.data.model.ApiPhoto
-import apod.julesssss.github.apod.extension.debugToast
 import apod.julesssss.github.apod.ui.photodetail.imagegallery.ImagePagerAdapter
+import apod.julesssss.github.apod.ui.photolist.PhotoSelection
 import kotlinx.android.synthetic.main.activity_photo_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -29,16 +28,17 @@ class PhotoDetailActivity : AppCompatActivity() {
         // subscribe to ViewModel state
         viewModel.state.observe(this, Observer { updateState(it) })
 
-        // check for bundled APOD. if it exists, display
-        intent.getParcelableExtra<ApiPhoto>(apiPhotoKey)?.let { displayPhoto(it) }
-            ?: debugToast("APOD not attached to bundle!")
+        setupFromArguments()
     }
 
-    private fun displayPhoto(apiPhoto: ApiPhoto) {
-        supportActionBar?.title = apiPhoto.title
+    private fun setupFromArguments() {
+        intent.getParcelableExtra<PhotoSelection>(apodSelectionKey)?.let {
+            supportActionBar?.title = it.apiPhoto.title
+            photoDetailViewPager.currentItem = it.position
+        }
     }
 
     private fun updateState(state: PhotoDetailViewModel.ViewState) {
-
+        // TODO
     }
 }

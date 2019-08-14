@@ -19,7 +19,7 @@ Once you have a key, you will need to make it available as a gradle.properties f
 
 Add the following to the gradle.properties file, replacing XYZ for your NASA API key.
 ```
-nasaApiKey=XYZ
+nasaApiKey="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ```
 
 After a project refresh, you should see the gradle.properties file in the Android Studio project browser view under 'Gradle Scripts'. Switch to the Android view if you don't see 'Gradle Scripts'

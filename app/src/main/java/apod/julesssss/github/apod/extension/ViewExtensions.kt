@@ -19,8 +19,10 @@ fun RecyclerView.createLinearLayoutManager(
 /*
  * Helper for loading images with Picasso
  */
-fun ImageView.loadWithPicasso(imageUrl: String, @DrawableRes fallbackDrawableId: Int) =
+fun ImageView.loadWithPicasso(imageUrl: String, @DrawableRes fallbackDrawableId: Int) {
+    if (imageUrl.isEmpty()) return
     Picasso.get()
         .load(imageUrl)
         .error(fallbackDrawableId)
         .into(this)
+}

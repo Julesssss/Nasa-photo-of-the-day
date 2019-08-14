@@ -2,16 +2,15 @@ package apod.julesssss.github.apod.ui.navigation
 
 import android.app.Activity
 import android.content.Intent
-import apod.julesssss.github.apod.data.model.ApiPhoto
 import apod.julesssss.github.apod.ui.photodetail.PhotoDetailActivity
-import apod.julesssss.github.apod.ui.photodetail.apiPhotoKey
+import apod.julesssss.github.apod.ui.photodetail.apodSelectionKey
+import apod.julesssss.github.apod.ui.photolist.PhotoSelection
 
 object ActivityLauncher {
 
-    fun launchDetailActivity(activity: Activity, apiPhoto: ApiPhoto) {
+    fun launchDetailActivity(activity: Activity, selection: PhotoSelection) {
         activity.startActivity(Intent(activity, PhotoDetailActivity::class.java).apply {
-            putExtra(apiPhotoKey, apiPhoto)
+            putExtra(apodSelectionKey, selection)
         })
     }
-
 }

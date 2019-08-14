@@ -20,5 +20,4 @@ object ApodDate {
 
         return calendar.time?.formatToDay() ?: ""
     }
-
 }
