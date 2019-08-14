@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photoDetailViewPager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.photodetail.PhotoDetailActivity">
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/photoDetailViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/midnightBlue" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:background="@android:color/black" />
