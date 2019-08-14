@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion configuration.compileSdkVersion
@@ -37,6 +38,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$libraries.constraintLayout"
     implementation "com.android.support:cardview-v7:$libraries.cardview"
     implementation "com.squareup.picasso:picasso:$libraries.picasso"
+    implementation "androidx.recyclerview:recyclerview:$libraries.recyclerview"
 
     // Dependency Injection
     implementation "org.koin:koin-androidx-scope:$libraries.koin"
