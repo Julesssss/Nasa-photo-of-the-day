@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:background="@color/midnightBlue"
             android:ellipsize="end"
-            android:lines="2"
+            android:maxLines="2"
             android:paddingStart="@dimen/margin_small"
             android:paddingTop="@dimen/margin_small"
             android:paddingEnd="@dimen/margin_small"
