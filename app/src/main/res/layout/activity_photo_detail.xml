@@ -3,4 +3,5 @@
     android:id="@+id/photoDetailViewPager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black" />
+    android:background="@android:color/black"
+    android:paddingTop="@dimen/margin_medium" />

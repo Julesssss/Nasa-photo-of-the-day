@@ -17,7 +17,9 @@ class ImageViewModel(app: Application) : DisposingViewModel(app), KoinComponent 
     fun setDesiredDate(apodDate: String) {
         add(apodRepo.getPhotoForDate(apodDate)
             .subscribeBy(
-                onSuccess = { viewState.value = viewState.value?.copy(imageUrl = it.imageUrl) },
+                onSuccess = {
+                    viewState.value = viewState.value?.copy(textTitle = it.title, imageUrl = it.imageUrl)
+                },
                 onError = {}
             )
         )

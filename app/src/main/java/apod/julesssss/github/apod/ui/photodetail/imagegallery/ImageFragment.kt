@@ -34,6 +34,7 @@ class ImageFragment : Fragment(), KoinComponent {
 
     private fun updateViewState(state: ImageViewState) {
         itemApodImage.loadWithPicasso(state.imageUrl, R.drawable.placeholder_black_hole)
+        itemApodTitle.text = state.textTitle
     }
 
     private fun Bundle?.getApodDate() = this?.getString(ARG_APOD_DATE) ?: ""
