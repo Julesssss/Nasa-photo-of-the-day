@@ -30,13 +30,15 @@ class ImageFragment : Fragment(), KoinComponent {
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state -> updateViewState(state) })
 
         viewModel.setDesiredDate(arguments?.getString(ARG_APOD_DATE) ?: "")
+
+        itemApodButtonRetry.setOnClickListener { viewModel.onRetry() }
     }
 
     private fun updateViewState(state: ImageViewState) {
         itemApodImage.loadWithPicasso(state.imageUrl, R.drawable.placeholder_black_hole)
         itemApodTitle.text = state.textTitle
         itemApodProgressBar.visibility = if (state.imageLoading) View.VISIBLE else View.GONE
-
+        itemApodButtonRetry.visibility = if (state.isError) View.VISIBLE else View.GONE
     }
 
     companion object {

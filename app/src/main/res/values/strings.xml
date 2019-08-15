@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">APOD</string>
+
+    <string name="app_name">NASA Astronomy</string>
 
     <!-- Content Descriptions -->
     <string name="image_desc_listitem_apod_image_main">Astronomy photo of the day.</string>
     <string name="image_desc_listitem_apod_image_type">Icon representing apod type.</string>
+
+    <!-- General -->
+    <string name="retry">Retry</string>
+
 </resources>

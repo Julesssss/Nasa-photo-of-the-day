@@ -35,6 +35,21 @@
         app:layout_constraintWidth_default="wrap"
         tools:text="Atlas at Dawn" />
 
+    <Button
+        android:id="@+id/itemApodButtonRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/retry"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/itemApodProgressBar"
         android:layout_width="wrap_content"

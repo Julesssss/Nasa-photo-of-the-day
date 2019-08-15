@@ -12,15 +12,41 @@ class ImageViewModel(app: Application) : DisposingViewModel(app), KoinComponent 
 
     private val apodRepo: ApodRepository by inject()
 
+    private lateinit var imageDate: String
+
     val viewState = MutableLiveData<ImageViewState>().also { it.value = ImageViewState() }
 
     fun setDesiredDate(apodDate: String) {
-        add(apodRepo.getPhotoForDate(apodDate)
+        imageDate = apodDate
+        getImage()
+    }
+
+    fun onRetry() {
+        getImage()
+
+        viewState.value = viewState.value?.copy(
+            imageLoading = true,
+            isError = false
+        )
+    }
+
+    private fun getImage() {
+        add(apodRepo.getPhotoForDate(imageDate)
             .subscribeBy(
                 onSuccess = {
-                    viewState.value = viewState.value?.copy(textTitle = it.title, imageUrl = it.imageUrl, imageLoading = false)
+                    viewState.value = viewState.value?.copy(
+                        textTitle = it.title,
+                        imageUrl = it.imageUrl,
+                        imageLoading = false,
+                        isError = false
+                    )
                 },
-                onError = {}
+                onError = {
+                    viewState.value = viewState.value?.copy(
+                        imageLoading = false,
+                        isError = true
+                    )
+                }
             )
         )
     }
