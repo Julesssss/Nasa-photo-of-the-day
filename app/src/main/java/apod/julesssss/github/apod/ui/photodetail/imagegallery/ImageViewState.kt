@@ -5,5 +5,6 @@ package apod.julesssss.github.apod.ui.photodetail.imagegallery
  */
 data class ImageViewState(
     val textTitle: String = "",
-    val imageUrl: String = ""
+    val imageUrl: String = "",
+    val imageLoading: Boolean = true
 )

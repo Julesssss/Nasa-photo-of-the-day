@@ -29,15 +29,15 @@ class ImageFragment : Fragment(), KoinComponent {
         lifecycle.addObserver(viewModel)
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state -> updateViewState(state) })
 
-        viewModel.setDesiredDate(arguments.getApodDate())
+        viewModel.setDesiredDate(arguments?.getString(ARG_APOD_DATE) ?: "")
     }
 
     private fun updateViewState(state: ImageViewState) {
         itemApodImage.loadWithPicasso(state.imageUrl, R.drawable.placeholder_black_hole)
         itemApodTitle.text = state.textTitle
-    }
+        itemApodProgressBar.visibility = if (state.imageLoading) View.VISIBLE else View.GONE
 
-    private fun Bundle?.getApodDate() = this?.getString(ARG_APOD_DATE) ?: ""
+    }
 
     companion object {
 

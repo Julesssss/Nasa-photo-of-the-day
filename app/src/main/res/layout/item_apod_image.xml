@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@android:color/black">
 
     <ImageView
         android:id="@+id/itemApodImage"
@@ -17,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/oriolesOrange" />
+        tools:src="@drawable/placeholder_black_hole" />
 
     <TextView
         android:id="@+id/itemApodTitle"
@@ -33,5 +34,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_default="wrap"
         tools:text="Atlas at Dawn" />
+
+    <ProgressBar
+        android:id="@+id/itemApodProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

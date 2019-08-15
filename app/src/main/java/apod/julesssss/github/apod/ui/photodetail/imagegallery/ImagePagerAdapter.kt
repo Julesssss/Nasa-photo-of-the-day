@@ -9,8 +9,6 @@ import org.koin.standalone.KoinComponent
 /*
  * Totally scrollable limit to ViewPager. Currently limited, but should be expanded dynamically as user scrolls
  */
-const val apodLimit = 20 // todo: remove hardcoded value
-
 class ImagePagerAdapter(fragmentManager: FragmentManager) :
     FragmentStatePagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT), KoinComponent {
 
