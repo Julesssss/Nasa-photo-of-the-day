@@ -27,7 +27,8 @@
         android:paddingTop="@dimen/margin_small"
         android:paddingBottom="@dimen/margin_small"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/listitem_apod" />
 
     <ProgressBar
         android:id="@+id/photoListProgressBar"
