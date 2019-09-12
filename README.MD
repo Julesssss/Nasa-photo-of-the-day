@@ -2,7 +2,9 @@
 
 A Kotlin Android app demonstrating a modern architecture consisting of Kotlin, MVVM, RxJava, Koin, LiveData and lifecycle aware ViewModels.
 
-View state is represented by an immutable data class emitted as a LiveData subscription from the ViewModels. 
+View state is represented by an immutable data class emitted as a LiveData subscription from the ViewModels.
+
+[![CircleCI](https://circleci.com/gh/Julesssss/Nasa-photo-of-the-day.svg?style=svg)](https://circleci.com/gh/Julesssss/Nasa-photo-of-the-day) 
 
 ### Architecture
 
