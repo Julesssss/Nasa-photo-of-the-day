@@ -15,7 +15,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "NASA_API_URL", '"https://api.nasa.gov"'
-        buildConfigField 'String', "NASA_API_KEY", nasaApiKey
+        buildConfigField 'String', "NASA_API_KEY", "\"" + nasaApiKey + "\""
     }
     buildTypes {
         release {
